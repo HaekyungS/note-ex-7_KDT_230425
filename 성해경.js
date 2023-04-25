@@ -1,23 +1,41 @@
-function exampleOne(arr, dataType, itemToFind){
-  if(Array.isArray(arr)===false){
-    console.log("배열이 아닙니다.");
-    return false;
-  }
-  const isDataTypeMatched=(typeof(itemToFind)===dataType);
-  const isItemExist = arr.includes(itemToFind)
+// function exampleOne(arr, dataType, itemToFind){
+//   if(Array.isArray(arr)===false){
+//     console.log("배열이 아닙니다.");
+//     return false;
+//   }
+//   const isDataTypeMatched=(typeof(itemToFind)===dataType);
+//   const isItemExist = arr.includes(itemToFind)
 
-  if(isDataTypeMatched === true && isItemExist ===true){
-    console.log(`${itemToFind}은(는) 배열에 존재합니다.`);
-    return true;
-  }else if(isItemExist === false){
-    console.log(`${itemToFind}은(는) 배열에 존재하지 않습니다.`);
-    return false
-  }else if(isDataTypeMatched === false){
-    console.log(`찾으려는 항목은 ${dataType} 데이터 타입이 아닙니다.`)
-    return false
+//   if(isDataTypeMatched === true && isItemExist ===true){
+//     console.log(`${itemToFind}은(는) 배열에 존재합니다.`);
+//     return true;
+//   }else if(isItemExist === false){
+//     console.log(`${itemToFind}은(는) 배열에 존재하지 않습니다.`);
+//     return false
+//   }else if(isDataTypeMatched === false){
+//     console.log(`찾으려는 항목은 ${dataType} 데이터 타입이 아닙니다.`)
+//     return false
+//   }
+// }
+
+function exampleOne(arr, dataType, itemToFind) {
+  if (Array.isArray(arr)) {
+    const itemToFindMatched = arr.includes(itemToFind)
+    const itemToFindType = typeof (itemToFind) === dataType
+    console.log(itemToFindMatched)
+    // console.log(itemToFindType)
+    if (itemToFindMatched && itemToFindType) {
+      console.log(`${itemToFind}은(는) 배열에 존재합니다.`);
+    } else if (itemToFindMatched===false) {
+      console.log(`${itemToFind}은(는) 배열에 존재하지 않습니다.`)
+    }else{
+      console.log(`찾으려는 항목은 ${dataType} 데이터 타입이 아닙니다.`)
+    }
+  } else {
+    console.log("배열이 아닙니다.");
   }
 }
 
-const basicData = ["안녕하세요","어디선가","입력된","데이터를","찾아보는","함수입니다."]
+const basicData = ["안녕하세요", "어디선가", "입력된", "데이터를", "찾아보는", "함수입니다."]
 
 exampleOne(basicData, "string", "어디선가")
