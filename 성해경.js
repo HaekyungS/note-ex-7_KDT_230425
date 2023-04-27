@@ -8,7 +8,7 @@ class ExampleOne {
   set arr(value) {
     if (!Array.isArray(value)) {
       // arr 이 배열이 아니라면
-      console.log('배열이 아닙니다.')
+      return console.log('배열이 아닙니다.')
       // 콘솔 출력
     }
     this._arr = value
@@ -17,7 +17,7 @@ class ExampleOne {
   get findNcheck() {
     if (this.dataTypeCheck() && this.arrInitemToFind()) {
       // 두 함수가 true 라면
-      console.log(`${this.itemToFind}은(는) 배열에 존재합니다.`)
+      return console.log(`${this.itemToFind}은(는) 배열에 존재합니다.`)
     }
   }
 
